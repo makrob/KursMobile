@@ -1,0 +1,25 @@
+# Gradle files
+.gradle/
+build/
+app/build/
+gradle/
+!gradle/wrapper/
+!gradle/libs.versions.toml
+
+# Local configuration
+local.properties
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.cxx
+.externalNativeBuild
+/captures
+.DS_Store
+Thumbs.db
+
+# Keystore files
+*.jks
+*.keystore
