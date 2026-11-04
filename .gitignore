@@ -19,6 +19,7 @@ local.properties
 /captures
 .DS_Store
 Thumbs.db
+.vs/
 
 # Keystore files
 *.jks
