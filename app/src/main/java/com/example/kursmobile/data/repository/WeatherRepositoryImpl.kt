@@ -55,22 +55,27 @@ class WeatherRepositoryImpl(
     }
 
     override suspend fun getWeatherForecast(latitude: Double, longitude: Double): WeatherForecast {
-        val response = weatherApi.getForecast(latitude, longitude)
+        val query = "$latitude,$longitude"
+        val response = weatherApi.getForecast(
+            apiKey = BuildConfig.WEATHER_API_KEY,
+            query = query,
+            days = 7
+        )
 
-        val dailyForecasts = response.daily.time.mapIndexed { index, date ->
+        val dailyForecasts = response.forecast.forecastDay.map { day ->
             DailyForecast(
-                date = date,
-                maxTemp = response.daily.temperature_2m_max.getOrElse(index) { 0.0 },
-                minTemp = response.daily.temperature_2m_min.getOrElse(index) { 0.0 },
-                avgTemp = response.daily.temperature_2m_mean.getOrElse(index) { 0.0 }
+                date = day.date,
+                maxTemp = day.day.maxTempC,
+                minTemp = day.day.minTempC,
+                avgTemp = day.day.avgTempC
             )
         }
 
         return WeatherForecast(
-            cityName = "",
-            country = "",
-            latitude = latitude,
-            longitude = longitude,
+            cityName = response.location.name,
+            country = response.location.country,
+            latitude = response.location.lat,
+            longitude = response.location.lon,
             dailyForecasts = dailyForecasts
         )
     }

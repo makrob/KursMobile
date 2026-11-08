@@ -1,9 +1,20 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.serialization)
 }
+
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.inputStream().use { localProperties.load(it) }
+}
+
+val ninjasApiKey = localProperties.getProperty("NINJAS_API_KEY") ?: ""
+val weatherApiKey = localProperties.getProperty("WEATHER_API_KEY") ?: ""
 
 android {
     namespace = "com.example.kursmobile"
@@ -18,8 +29,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-//            buildConfigField("String", "NINJAS_API_KEY", "\"${project.properties["NINJAS_API_KEY"] ?: ""}\"")
-        buildConfigField("String", "NINJAS_API_KEY", "\"ioADUhyVBUtspGGynMuIh0GEVY3GDeu7UITVKuhA\"")
+        buildConfigField("String", "NINJAS_API_KEY", "\"$ninjasApiKey\"")
+        buildConfigField("String", "WEATHER_API_KEY", "\"$weatherApiKey\"")
 
         javaCompileOptions {
             annotationProcessorOptions {

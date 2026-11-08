@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 
 object NetworkModule {
     private const val CITY_API_BASE_URL = "https://api.api-ninjas.com/"
-    private const val WEATHER_API_BASE_URL = "https://api.open-meteo.com/"
+    private const val WEATHER_API_BASE_URL = "https://api.weatherapi.com/"
 
     private val json = Json {
         ignoreUnknownKeys = true
