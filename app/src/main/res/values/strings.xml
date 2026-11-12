@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">App KursMobile</string>
+
+    <string name="search_icon_description">Search</string>
+    <string name="clear_icon_description">Clear</string>
+
+    <string name="weather_title">Weather Forecast</string>
+    <string name="search_placeholder">Enter city name (e.g., London, Paris, Tokyo)</string>
+    <string name="retry">Retry</string>
+    <string name="empty_message">Enter a city name to see weather forecast</string>
+    <string name="error_search_failed">Failed to search cities</string>
+    <string name="error_city_not_found">City not found</string>
+    <string name="error_coordinates_failed">Failed to get city coordinates</string>
+    <string name="error_weather_failed">Failed to load weather data</string>
+
+    <string name="capital_city">Capital City</string>
+    <string name="population_format">Population: %1$s</string>
+
+    <string name="forecast_title">7-Day Forecast</string>
+    <string name="forecast_city_country">%1$s, %2$s</string>
+    <string name="temperature_max">%1$d°</string>
+    <string name="temperature_min">%1$d°</string>
+    <string name="temperature_avg">Avg: %1$d°</string>
+</resources>
