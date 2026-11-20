@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Приложение KursMobile</string>
+
+    <string name="search_icon_description">Поиск</string>
+    <string name="clear_icon_description">Очистить</string>
+
+    <string name="weather_title">Прогноз погоды</string>
+    <string name="search_placeholder">Введите название города (например, London, Paris, Tokyo)</string>
+    <string name="retry">Повторить</string>
+    <string name="empty_message">Введите название города, чтобы увидеть прогноз</string>
+    <string name="error_search_failed">Не удалось найти города</string>
+    <string name="error_city_not_found">Город не найден</string>
+    <string name="error_coordinates_failed">Не удалось получить координаты</string>
+    <string name="error_weather_failed">Не удалось загрузить данные о погоде</string>
+
+    <string name="capital_city">Столица</string>
+    <string name="population_format">Население: %1$s</string>
+
+    <string name="forecast_title">Прогноз на 7 дней</string>
+    <string name="forecast_city_country">%1$s, %2$s</string>
+    <string name="temperature_max">%1$d°</string>
+    <string name="temperature_min">%1$d°</string>
+    <string name="temperature_avg">Средняя: %1$d°</string>
+</resources>
